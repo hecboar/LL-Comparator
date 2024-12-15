@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "source_path": "internal_training_data_AXA",
+    "custom_fields_schema": [
+      {"name": "prompt_word_count", "type": "number"},
+      {"name": "word_overlap_rate_between_a_b", "type": "number"},
+      {"name": "data_source", "type": "category"},
+      {"name": "unique_id", "type": "string"},
+      {"name": "is_over_max_token", "type": "per_model_boolean"},
+      {"name": "TF-IDF_between_prompt_and_response", "type": "per_model_number"},
+      {"name": "writing_style", "type": "per_model_category"}
+    ]
+  },
+  "models": [
+    {"name": "Mistral 8b"},
+    {"name": "Llama 3.1 8b"}
+  ],
+  "examples": [
+    {
+      "input_text": "¿Cómo podemos implementar un sistema de puntuación de crédito para clientes minoristas en AXA usando datos históricos?",
+      "tags": ["DataScience", "AXA", "Credit Scoring"],
+      "output_text_a": "Mistral 8b sugiere un proceso detallado: considerar variables macroeconómicas, validar el modelo con técnicas de cross-validation y ajustar el umbral de corte.",
+      "output_text_b": "Llama 3.1 8b propone utilizar regresión logística, pero sin detallar las variables ni el método de validación.",
+      "score": 0.8,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.5,
+          "rationale": "El modelo A ofrece un plan más detallado y práctico."
+        },
+        {
+          "is_flipped": false,
+          "score": 0.1,
+          "rationale": "El modelo B no es incorrecto, sólo menos completo en detalles."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 17,
+        "word_overlap_rate_between_a_b": 0.4,
+        "data_source": "Internal",
+        "unique_id": "q001",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.25, 0.15],
+        "writing_style": ["Estructurado", "Conciso"]
+      }
+    },
+    {
+      "input_text": "Explica cómo entrenar un modelo de detección de fraude con datos no balanceados en AXA.",
+      "tags": ["DataScience", "AXA", "Fraud Detection"],
+      "output_text_a": "Mistral 8b sugiere utilizar técnicas como SMOTE, estratificación en el train-test split y ajuste de umbrales, proporcionando un enfoque integral.",
+      "output_text_b": "Llama 3.1 8b menciona sólo oversampling genérico sin detallar procesos adicionales.",
+      "score": 1.2,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.0,
+          "rationale": "A detalla más técnicas y pasos claros."
+        },
+        {
+          "is_flipped": false,
+          "score": 1.5,
+          "rationale": "A ofrece un repertorio más robusto de herramientas."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 15,
+        "word_overlap_rate_between_a_b": 0.35,
+        "data_source": "Internal",
+        "unique_id": "q002",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.3, 0.2],
+        "writing_style": ["Técnico", "Breve"]
+      }
+    },
+    {
+      "input_text": "¿Cuál es el mejor enfoque para segmentar clientes de AXA utilizando aprendizaje no supervisado?",
+      "tags": ["DataScience", "AXA", "Customer Segmentation"],
+      "output_text_a": "Mistral 8b recomienda usar K-means tras normalizar datos y validar con el índice de silhouette.",
+      "output_text_b": "Llama 3.1 8b sugiere clustering jerárquico, pero sin explicar métricas de calidad.",
+      "score": 0.5,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.0,
+          "rationale": "A incluye una métrica de evaluación (silhouette)."
+        },
+        {
+          "is_flipped": false,
+          "score": 0.0,
+          "rationale": "B no es erróneo, pero carece de detalles prácticos."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 14,
+        "word_overlap_rate_between_a_b": 0.5,
+        "data_source": "Internal",
+        "unique_id": "q003",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.2, 0.25],
+        "writing_style": ["Didáctico", "General"]
+      }
+    },
+    {
+      "input_text": "Describe el proceso para validar la calidad de datos antes de entrenar un modelo predictivo en AXA.",
+      "tags": ["DataScience", "AXA", "Data Quality"],
+      "output_text_a": "Mistral 8b menciona revisar consistencia, duplicados, valores faltantes y normalización.",
+      "output_text_b": "Llama 3.1 8b sólo menciona eliminar outliers.",
+      "score": 1.0,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.5,
+          "rationale": "A cubre múltiples aspectos de calidad de datos."
+        },
+        {
+          "is_flipped": false,
+          "score": 0.5,
+          "rationale": "B es demasiado limitado."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 17,
+        "word_overlap_rate_between_a_b": 0.4,
+        "data_source": "Internal",
+        "unique_id": "q004",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.35, 0.1],
+        "writing_style": ["Exhaustivo", "Minimalista"]
+      }
+    },
+    {
+      "input_text": "¿Cómo preparar un conjunto de datos históricos de AXA para un modelo de series temporales?",
+      "tags": ["DataScience", "AXA", "Time Series"],
+      "output_text_a": "Mistral 8b explica crear ventanas temporales, diferenciar la serie e imputar valores faltantes.",
+      "output_text_b": "Llama 3.1 8b sugiere entrenar directamente con datos crudos.",
+      "score": 1.3,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.5,
+          "rationale": "A ofrece un método más metódico y robusto."
+        },
+        {
+          "is_flipped": false,
+          "score": 0.5,
+          "rationale": "B es demasiado superficial."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 15,
+        "word_overlap_rate_between_a_b": 0.45,
+        "data_source": "Internal",
+        "unique_id": "q005",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.28, 0.13],
+        "writing_style": ["Metódico", "Escueto"]
+      }
+    },
+    {
+      "input_text": "Explica cómo evaluar la importancia de las variables en un modelo de predicción de siniestros para AXA.",
+      "tags": ["DataScience", "AXA", "Feature Importance"],
+      "output_text_a": "Mistral 8b detalla SHAP values, Permutation importance y análisis parcial de dependencias.",
+      "output_text_b": "Llama 3.1 8b sólo menciona la importancia basada en coeficientes.",
+      "score": 1.1,
+      "individual_rater_scores": [
+        {
+          "is_flipped": false,
+          "score": 1.0,
+          "rationale": "A incluye métodos avanzados (SHAP, Permutation)."
+        },
+        {
+          "is_flipped": false,
+          "score": 1.2,
+          "rationale": "A es más rico en herramientas explicativas."
+        }
+      ],
+      "custom_fields": {
+        "prompt_word_count": 17,
+        "word_overlap_rate_between_a_b": 0.55,
+        "data_source": "Internal",
+        "unique_id": "q006",
+        "is_over_max_token": [false, false],
+        "TF-IDF_between_prompt_and_response": [0.4, 0.2],
+        "writing_style": ["Analítico", "Simplificado"]
+      }
+    }
+  ]
+}
